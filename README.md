@@ -1,50 +1,108 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# CalBank App UI Enhanced
 
-## Get started
+This project is a modern, cross-platform mobile banking application UI built with [Expo](https://expo.dev), [React Native](https://reactnative.dev/), and [TypeScript](https://www.typescriptlang.org/). It provides a robust, user-friendly interface for CalBank customers to manage accounts, perform transactions, and access banking services securely and efficiently.
 
-1. Install dependencies
+## Table of Contents
 
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Available Scripts](#available-scripts)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- **User Authentication**: Secure login and PIN verification screens.
+- **Dashboard**: Account overview, balance visibility toggle, quick actions (send money, pay bills, deposit checks, manage cards).
+- **Payments**: Payment confirmation, success, and unsuccessful flows.
+- **Services**: Access to banking services (beneficiaries, bulk transfers, investments, instant accounts, payments, card services, agent banking, shop, locator, etc.).
+- **Support**: In-app chat support for customer assistance.
+- **Profile & Settings**: Manage personal information, account settings, transaction history, and security options.
+- **Onboarding**: Guided onboarding for new users.
+- **Modern UI**: Responsive layouts, custom components, and branded visuals.
+
+## Screenshots
+
+> Add screenshots of key screens here (Dashboard, Login, Payment, Services, Support, etc.)
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or newer recommended)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/frankmawuli/calbank-app-ui-enhanced.git
+   cd calbank-app-ui-enhanced
+   ```
+2. **Install dependencies:**
    ```bash
    npm install
    ```
-
-2. Start the app
-
+3. **Start the development server:**
    ```bash
+   npm start
+   # or
    npx expo start
    ```
+4. **Run on device/emulator:**
+   - Android: `npm run android`
+   - iOS: `npm run ios`
+   - Web: `npm run web`
 
-In the output, you'll find options to open the app in a
+### File-based Routing
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Edit screens and navigation in the `app/` directory. Routing is managed by [expo-router](https://expo.github.io/router/docs).
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+├── app/                # Main app screens and navigation
+│   ├── (tabs)/         # Tabbed navigation screens (dashboard, services, support, more)
+│   ├── auth/           # Authentication screens (login, pin)
+│   ├── confirmation/   # Payment confirmation screens
+│   ├── onboarding/     # Onboarding screens
+├── assets/             # Images and icons
+├── components/         # Reusable UI components
+├── libs/               # Shared libraries and types
+├── package.json        # Project metadata and scripts
+├── app.json            # Expo app configuration
+├── tsconfig.json       # TypeScript configuration
+├── eslint.config.js    # ESLint configuration
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Tech Stack
 
-## Learn more
+- **React Native**: UI development
+- **Expo**: Cross-platform tooling
+- **TypeScript**: Type safety
+- **expo-router**: File-based navigation
+- **react-hook-form & zod**: Form validation
+- **@expo/vector-icons**: Iconography
+- **Custom Components**: Modular, reusable UI elements
 
-To learn more about developing your project with Expo, look at the following resources:
+## Available Scripts
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- `npm start` — Start the Expo development server
+- `npm run android` — Run app on Android emulator/device
+- `npm run ios` — Run app on iOS simulator/device
+- `npm run web` — Run app in the browser
+- `npm run lint` — Run ESLint for code quality
+- `npm run reset-project` — Reset to a blank starter app
 
-## Join the community
+## Contributing
 
-Join our community of developers creating universal apps.
+Contributions are welcome! Please fork the repository, create a feature branch, and submit a pull request. For major changes, open an issue first to discuss your ideas.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## License
+
+This project is licensed under the MIT License.
