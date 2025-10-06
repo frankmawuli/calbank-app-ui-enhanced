@@ -1,33 +1,62 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import React from "react";
+import { Tabs } from "expo-router";
+import Feather from "@expo/vector-icons/Feather";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function Layout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarActiveTintColor: "#F18C20",
+        tabBarInactiveTintColor: "#6B7280", // inactive color (gray)
+        tabBarLabelStyle: { fontSize: 12, marginBottom: 4 },
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="dashboard"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          tabBarIcon: ({ color, focused }) => (
+            <Feather name={focused ? "home" : "home"} size={24} color={color} />
+          ),
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="services"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Services",
+          tabBarIcon: ({ color, focused }) => (
+            <Feather name={focused ? "grid" : "grid"} size={24} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="support"
+        options={{
+          title: "Support",
+          tabBarIcon: ({ color, focused }) => (
+            <Feather
+              name={focused ? "headphones" : "headphones"}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="more"
+        options={{
+          title: "More",
+          tabBarIcon: ({ color, focused }) => (
+            <Feather
+              name={focused ? "more-vertical" : "more-vertical"}
+              size={24}
+              color={color}
+            />
+          ),
         }}
       />
     </Tabs>
